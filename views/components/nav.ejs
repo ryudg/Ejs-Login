@@ -1,0 +1,23 @@
+<nav>
+  <a href="/">home</a> | <a href="/about">about</a> |
+  <a
+    onclick="isAdmin('<%= admin.id %>','<%= admin.pwd %>'); return false"
+    href="/admin"
+    >admin</a
+  >
+  |
+  <a href="/product">product</a>
+</nav>
+
+<script>
+  // 관리자 확인
+  function isAdmin(id, pwd) {
+    const inputId = prompt("관리자 아이디 입력");
+    const inputPwd = prompt("관리자 패스워드 입력");
+    if (inputId === id && inputPwd == pwd) {
+      location.href = "/admin";
+    } else {
+      alert("ID 또는 PWD가 일치하지 않습니다.");
+    }
+  }
+</script>
